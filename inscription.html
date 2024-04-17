@@ -80,7 +80,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-5 col-lg-6 text-white">
-						<h2>Nous Contacter</h2>
+						<h2>S'inscrire</h2>
 					</div>
 				</div>
 			</div>
@@ -92,45 +92,80 @@
 	<!-- Page section -->
 	<section class="page-section spad contact-page">
 		<div class="container">
-			<div class="map">
-				<iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ5yV8Q1aE50cRYg8suslU4vY&key=AIzaSyAyRU3N6ncj86ucLU4ZT9t8leoF47IB2Oo" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-
-			</div>
-			<div class="row">
-				<div class="col-lg-4 mb-5 mb-lg-0">
-					<h4 class="comment-title">Nous contacter</h4>
-					<p>Si vous voulez nous contacter n'hésiter pas à nous envoyer une lettre à notre adresse, nous envoyez un e-mail ou tout simplement nous appeler.</p>
-					<div class="row">
-						<div class="col-md-9">
-							<ul class="contact-info-list">
-								<li><div class="cf-left">Adresse</div><div class="cf-right">372 rue St-Fuscien, Amiens</div></li>
-								<li><div class="cf-left">Numéro</div><div class="cf-right">+33 6 48 74 09 81</div></li>
-								<li><div class="cf-left">E-mail</div><div class="cf-right">fontagne.bastien1@gmail.com</div></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-8">
-					<div class="contact-form-warp">
-						<h4 class="comment-title">Envoyez nous un Message</h4>
-						<form class="comment-form">
-							<div class="row">
-								<div class="col-md-6">
-									<input type="text" placeholder="Name">
-								</div>
-								<div class="col-md-6">
-									<input type="email" placeholder="Email">
-								</div>
-								<div class="col-lg-12">
-									<input type="text" placeholder="Subject">
-									<textarea placeholder="Message"></textarea>
-									<button class="site-btn btn-sm">Envoyer</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+			<form action="POST">
+				<p class="formTitle"><strong>Créer un compte</strong></p>
+				<div id="resultRegister" style="color: red; margin: 2%;"></div>
+			  </form>
+			  <label for="Username">Nom d'utilisateur</label>
+		  
+			  <input type="text" name="Username" id="Username_input">
+		  
+			  <label for="Password">Mot de passe</label>
+		  
+			  <input type="password" name="Password" id="Password_input">
+		  
+			  <div class="LogcontainerSelector">
+				<div id="SubmitLogin">Créer un compte</div>
+				<script>
+				  document.getElementById('SubmitLogin').addEventListener('click', function () {
+					var username = document.getElementById('Username_input').value;
+					var password = document.getElementById('Password_input').value;
+					var resultDiv = document.getElementById('resultRegister');
+		  
+		  
+					var xhr = new XMLHttpRequest();
+					var url = 'http://192.168.64.162:3000/register';
+					xhr.open('POST', url, true);
+					xhr.setRequestHeader('Content-Type', 'application/json');
+		  
+					xhr.onreadystatechange = function () {
+					  if (xhr.readyState == 4) {
+		  
+						document.getElementById('Username_input').value = '';
+						document.getElementById('Password_input').value = '';
+		  
+		  
+						console.log(xhr.responseText);
+		  
+						if (xhr.status == 201) {
+						  resultDiv.innerHTML = 'Création de compte réussie';
+						  console.log('Utilisateur créé avec succès.');
+						  resultDiv.style.color = 'green';
+		  
+						} else if (xhr.status == 400) {
+						  resultDiv.innerHTML = 'Nom d\'utilisateur déjà pris'
+		  
+		  
+		  
+						  console.error('Erreur lors de la création de l\'utilisateur.');
+		  
+						} else if (xhr.status == 600) {
+						  resultDiv.innerHTML = "Veuillez remplir les deux champs"
+		  
+						}
+					  }
+					};
+		  
+					var data = {
+					  identifiant: username,
+					  password: password
+					};
+		  
+					xhr.send(JSON.stringify(data));
+				  });
+				</script>
+				<div id="registerButton2">J'ai déjà un compte</div>
+				<script>
+		  
+				  document.addEventListener("DOMContentLoaded", function () {
+		  
+					var registerButton = document.getElementById("registerButton2");
+		  
+					registerButton.addEventListener("click", function () {
+					  window.location.href = "connexion.html";
+					});
+				  }); 
+				</script>
 		</div>
 	</section>
 	<!-- Page section end -->

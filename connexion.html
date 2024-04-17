@@ -89,11 +89,163 @@
 	<!-- Page info section -->
 
 
-	<!-- Page section -->
-	<section class="page-section spad contact-page">
-		<div class="container">
-			
+<!-- Page section -->
+<section class="page-section spad contact-page">
+	<div class="container">
+		<form>
+			<p class="formTitle"><strong>Se connecter</strong></p>
+			<div id="resultRegister" style="color: red; margin: 2%;"></div>
+	  
+			<label for="Username">Nom d'utilisateur</label>
+			<input type="text" name="Username" id="Username_input">
+	  
+			<label for="Password">Mot de passe</label>
+			<input type="password" name="Password" id="Password_input">
+	  
+			<div class="LogcontainerSelector">
+			  <div id="SubmitLogin" onclick="submitLogin()">Se connecter</div>
+			  <script>
+				async function submitLogin() {
+				  const usernameInput = document.getElementById('Username_input');
+				  const passwordInput = document.getElementById('Password_input');
+				  const resultDiv = document.getElementById('resultRegister');
+	  
+				  const username = usernameInput.value;
+				  const password = passwordInput.value;
+	  
+				  usernameInput.value = '';
+				  passwordInput.value = '';
+	  
+				  const data = {
+					identifiant: username,
+					password: password
+				  };
+	  
+				  try {
+					const response = await fetch('http://192.168.64.162:3000/login', {
+					  method: 'POST',
+					  headers: {
+						'Content-Type': 'application/json',
+						'Authorization': 'Basic ' + btoa(username + ':' + password)
+					  },
+					  body: JSON.stringify(data)
+					});
+	  
+					if (response.ok) {
+					  const result = await response.json();
+					  console.log('Réponse du serveur:', result);
+	  
+					  document.cookie = "ProjetE_unique_user_token=" + encodeURIComponent(result.userUUID) + "; max-age=" + (7 * 24 * 60 * 60);
+	  
+					  resultDiv.textContent = 'Connexion réussie!';
+					  resultDiv.style.color = 'green';
+					  setTimeout(() => {
+						window.location.href = 'index.html';
+					  }, 2000);
+					} else {
+					  console.error('Erreur lors de la requête:', response.statusText);
+	  
+					  resultDiv.textContent = 'Erreur de connexion. Veuillez réessayer.';
+					  resultDiv.style.color = 'red';
+					}
+				  } catch (error) {
+					console.error('Erreur lors de la requête:', error.message);
+	  
+					resultDiv.textContent = 'Erreur de connexion. Veuillez réessayer.';
+					resultDiv.style.color = 'red';
+				  }
+				}
+			  </script>
+	  
+			  <div id="registerButton2">S'inscrire</div>
+			  <script>
+				document.addEventListener("DOMContentLoaded", function () {
+				  var registerButton = document.getElementById("registerButton2");
+	  
+				  registerButton.addEventListener("click", function () {
+					window.location.href = "inscription.html";
+				  });
+				});
+			  </script>
+			</div>
+		  </form>
+	</div>
+</section>
+<!-- Page section end -->
+
+
+<!-- Footer top section -->
+<section class="footer-top-section">
+</div>
+<div class="row">
+	<div class="col-lg-4 col-md-6">
+		<div class="footer-widget mb-5 mb-md-0">
+			<h4 class="fw-title">Dernier Postes</h4>
+		<div class="latest-blog">
+			<div class="lb-item">
+				<div class="lb-thumb set-bg" data-setbg="img/latest-blog/1.jpg"></div>
+				<div class="lb-content">
+					<div class="lb-date">28 Octobre, 2023</div>
+					<p>PUBG: Est-il encore bon en 2023?</p>
+					<a href="#" class="lb-author">By Bastien</a>
+				</div>
+			</div>
+			<div class="lb-item">
+				<div class="lb-thumb set-bg" data-setbg="img/latest-blog/2.jpg"></div>
+				<div class="lb-content">
+					<div class="lb-date">27 Octobre, 2023</div>
+					<p>Le genre du Battle Royal serait-il entrain de s'éssoufler?</p>
+					<a href="#" class="lb-author">By Bastien</a>
+				</div>
+			</div>
+			<div class="lb-item">
+				<div class="lb-thumb set-bg" data-setbg="img/latest-blog/3.jpg"></div>
+				<div class="lb-content">
+					<div class="lb-date">26 Octobre, 2023</div>
+					<p>Nouvelle extension World Of WarCraft!</p>
+					<a href="#" class="lb-author">By Bastien</a>
+				</div>
+			</div>
+			</div>
 		</div>
+	</div>
+	<div class="col-lg-4 col-md-6">
+		<div class="footer-widget">
+			<h4 class="fw-title">Top Commentaires</h4>
+			<div class="top-comment">
+				<div class="tc-item">
+					<div class="tc-thumb set-bg" data-setbg="img/authors/1.jpg"></div>
+					<div class="tc-content">
+						<p><a href="#">James Smith</a> <span>sur</span>  Guide Symmetra</p>
+						<div class="tc-date">21 octobre, 2023</div>
+					</div>
+				</div>
+				<div class="tc-item">
+					<div class="tc-thumb set-bg" data-setbg="img/authors/2.jpg"></div>
+					<div class="tc-content">
+						<p><a href="#">James Smith</a> <span>sur</span>  Review Mass Effect</p>
+						<div class="tc-date">13 Octobre, 2023</div>
+					</div>
+				</div>
+				<div class="tc-item">
+					<div class="tc-thumb set-bg" data-setbg="img/authors/3.jpg"></div>
+					<div class="tc-content">
+						<p><a href="#">James Smith</a> <span>sur</span>  Review Cyberpunk2077 Phantom Liberty</p>
+						<div class="tc-date">25 octobre, 2023</div>
+					</div>
+				</div>
+				<div class="tc-item">
+					<div class="tc-thumb set-bg" data-setbg="img/authors/4.jpg"></div>
+					<div class="tc-content">
+						<p><a href="#">James Smith</a> <span>sur</span>  Nouvelle extension World of Warcraft</p>
+						<div class="tc-date">19 octobre, 2023</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
 </section>
 <!-- Footer top section end -->
 	
