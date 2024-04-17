@@ -1,0 +1,14 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "api pour site web",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Bastien Fontagne",
+  "license": "ISC"
+}
