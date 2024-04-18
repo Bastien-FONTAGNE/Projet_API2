@@ -1506,22 +1506,11 @@ ol {
 }
 
 section.page-section.spad.contact-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2%;
-}
-
-.loginForm {
-  width: 25%;
-  padding: 2%;
-  border-style: solid;
-  background-color: #ffb320;
-  color: #131313;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5%;
+  }
 
 .formTitle {
   font-size: 150%;
@@ -1531,4 +1520,77 @@ section.page-section.spad.contact-page {
   border-style: solid;
   background-color: #f1f1f1;
   border-radius: 0%;
+  padding: 0.5em 1em; /* Ajoutez cette ligne pour ajouter du padding au titre */
 }
+
+.registerForm {
+  width: 30%; /* Réduisez la largeur de la div registerForm */
+  padding: 4%;
+  border-style: solid;
+  background-color: #ffb320;
+  color: #131313;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Ajoutez cette ligne pour centrer horizontalement les éléments */
+}
+
+.registerForm label {
+  align-self: flex-start; /* Alignez les labels à gauche */
+  width: 100%;
+  padding: 0 2%; /* Ajoutez du padding à gauche et à droite des labels */
+}
+
+.registerForm input {
+  width: 100%;
+  padding: 2%;
+}
+
+.registerForm .LogcontainerSelector {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.registerForm .LogcontainerSelector div {
+  padding: 2%;
+  cursor: pointer;
+}
+
+.loginForm {
+	width: 30%; /* Ajustez la largeur de la div loginForm pour qu'elle corresponde à celle de la div registerForm */
+	padding: 4%;
+	border-style: solid;
+	background-color: #ffb320;
+	color: #131313;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; /* Ajoutez cette ligne pour centrer horizontalement les éléments */
+  }
+  
+  .loginForm label {
+	align-self: flex-start; /* Alignez les labels à gauche */
+	width: 100%;
+	padding: 0 2%; /* Ajoutez du padding à gauche et à droite des labels */
+  }
+  
+  .loginForm input {
+	width: 100%;
+	padding: 2%;
+  }
+  
+  .loginForm .LogcontainerSelector {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .loginForm .LogcontainerSelector div {
+	padding: 2%;
+	cursor: pointer;
+  }
