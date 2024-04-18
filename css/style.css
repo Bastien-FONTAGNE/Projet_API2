@@ -1504,3 +1504,31 @@ ol {
 		font-size: 40px;
 	}
 }
+
+section.page-section.spad.contact-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+
+.loginForm {
+  width: 25%;
+  padding: 2%;
+  border-style: solid;
+  background-color: #ffb320;
+  color: #131313;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formTitle {
+  font-size: 150%;
+  text-align: center;
+  border-width: 2%;
+  border-color: #131313;
+  border-style: solid;
+  background-color: #f1f1f1;
+  border-radius: 0%;
+}
