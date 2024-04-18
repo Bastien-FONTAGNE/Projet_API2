@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "express": "npm:undefined@*"
+    "express": "npm:undefined@*",
+    "nodemon": "^3.1.0"
   }
 }
