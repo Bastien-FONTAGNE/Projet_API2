@@ -712,108 +712,116 @@ ol {
 ------------------------*/
 
 .footer-top-section {
-	background-image: url("../img/pattern.png");
-	background-repeat: repeat;
-	padding: 72px 0;
+  background-image: url("../img/pattern.png");
+  background-repeat: repeat;
+  padding: 72px 0;
 }
 
 .footer-top-section .container {
-	margin-top: -20px;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.footer-top-bg {
-	position: absolute;
-	left: -30px;
-	bottom: -85px;
-	z-index: 2;
+.footer-top-section .col-lg-4,
+.footer-top-section .col-md-6 {
+  flex: 1 1 40%;
+  margin: 0 2%;
 }
 
-.footer-logo img {
-	margin-bottom: 35px;
+@media (max-width: 991px) {
+  .footer-top-section .col-lg-4,
+  .footer-top-section .col-md-6 {
+    flex: 1 1 100%;
+    margin: 10px 0;
+  }
 }
 
 .footer-widget {
-	padding: 40px 30px 7px;
-	background: #252525;
-	border: 1px solid #4a4a4a;
+  padding: 40px 30px 7px;
+  background: #252525;
+  border: 1px solid #4a4a4a;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .footer-widget .fw-title {
-	color: #fff;
-	margin-bottom: 40px;
+  color: #fff;
+  margin-bottom: 40px;
 }
 
 .latest-blog .lb-item {
-	margin-bottom: 23px;
-	overflow: hidden;
+  margin-bottom: 23px;
+  overflow: hidden;
 }
 
 .latest-blog .lb-item .lb-thumb {
-	width: 97px;
-	height: 97px;
-	float: left;
+  width: 97px;
+  height: 97px;
+  float: left;
 }
 
 .latest-blog .lb-item .lb-content {
-	padding-left: 110px;
+  padding-left: 110px;
 }
 
 .latest-blog .lb-item .lb-content .lb-date {
-	font-size: 12px;
-	color: #ffb320;
-	margin-bottom: 8px;
+  font-size: 12px;
+  color: #ffb320;
+  margin-bottom: 8px;
 }
 
 .latest-blog .lb-item .lb-content p {
-	font-size: 12px;
-	margin-bottom: 5px;
-	color: #d3d3d3;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #d3d3d3;
 }
 
 .latest-blog .lb-item .lb-content .lb-author {
-	font-size: 12px;
-	color: #d3d3d3;
-	opacity: 0.45;
+  font-size: 12px;
+  color: #d3d3d3;
+  opacity: 0.45;
 }
 
 .top-comment {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .top-comment .tc-item {
-	margin-bottom: 23px;
-	overflow: hidden;
+  margin-bottom: 23px;
+  overflow: hidden;
 }
 
 .top-comment .tc-item .tc-thumb {
-	width: 63px;
-	height: 63px;
-	border-radius: 50%;
-	float: left;
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  float: left;
 }
 
 .top-comment .tc-item .tc-content {
-	padding-left: 100px;
+  padding-left: 100px;
 }
 
 .top-comment .tc-item .tc-content p {
-	font-size: 12px;
-	color: #d3d3d3;
-	margin-bottom: 5px;
+  font-size: 12px;
+  color: #d3d3d3;
+  margin-bottom: 5px;
 }
 
 .top-comment .tc-item .tc-content p a {
-	color: #ff205f;
+  color: #ff205f;
 }
 
 .top-comment .tc-item .tc-content p span {
-	color: #7a7a7a;
+  color: #7a7a7a;
 }
 
 .top-comment .tc-item .tc-content .tc-date {
-	font-size: 12px;
-	color: #ffb320;
+  font-size: 12px;
+  color: #ffb320;
 }
 
 /*----------------------
@@ -1519,6 +1527,20 @@ section.page-section.spad.contact-page {
 	justify-content: center;
 	padding: 5%;
   }
+
+#youtube {
+  padding: 5% 0; /* Modifiez cette ligne pour ajouter de la marge en haut et en bas de la section */
+}
+
+#youtube .container {
+  max-width: 90%; /* Modifiez cette ligne pour réduire la largeur du conteneur et ajouter de la marge de chaque côté */
+}
+
+#youtube iframe {
+  width: 100%; /* Modifiez cette ligne pour que la vidéo prenne 100% de la largeur de son conteneur */
+  height: auto; /* Ajoutez cette ligne pour que la hauteur de la vidéo s'ajuste automatiquement */
+  aspect-ratio: 16 / 9; /* Ajoutez cette ligne pour définir le rapport largeur/hauteur de la vidéo à 16:9 */
+}
 
 .formTitle {
   font-size: 150%;
