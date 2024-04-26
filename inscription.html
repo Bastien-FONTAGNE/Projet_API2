@@ -92,83 +92,38 @@
 	<!-- Page section -->
 	<section class="page-section spad contact-page">
 		<div class="registerForm">
-			<form action="POST">
-				<p class="formTitle"><strong>S'inscrire</strong></p>
-				<div id="resultRegister" style="color: red; margin: 2%;"></div>
-			  </form>
-			  <label for="Username">Nom d'utilisateur</label>
-		  
-			  <input type="text" name="Username" id="Username_input">
-		  
-			  <label for="Password">Mot de passe</label>
-		  
-			  <input type="password" name="Password" id="Password_input">
-		  
-			  <div class="LogcontainerSelector">
-				<div id="SubmitLogin">Créer un compte</div>
-				<script>
-				  document.getElementById('SubmitLogin').addEventListener('click', function () {
-					var username = document.getElementById('Username_input').value;
-					var password = document.getElementById('Password_input').value;
-					var resultDiv = document.getElementById('resultRegister');
-		  
-		  
-					var xhr = new XMLHttpRequest();
-					var url = 'http://192.168.64.162:3000/register';
-					xhr.open('POST', url, true);
-					xhr.setRequestHeader('Content-Type', 'application/json');
-		  
-					xhr.onreadystatechange = function () {
-					  if (xhr.readyState == 4) {
-		  
-						document.getElementById('Username_input').value = '';
-						document.getElementById('Password_input').value = '';
-		  
-		  
-						console.log(xhr.responseText);
-		  
-						if (xhr.status == 201) {
-						  resultDiv.innerHTML = 'Création de compte réussie';
-						  console.log('Utilisateur créé avec succès.');
-						  resultDiv.style.color = 'green';
-		  
-						} else if (xhr.status == 400) {
-						  resultDiv.innerHTML = 'Nom d\'utilisateur déjà pris'
-		  
-		  
-		  
-						  console.error('Erreur lors de la création de l\'utilisateur.');
-		  
-						} else if (xhr.status == 600) {
-						  resultDiv.innerHTML = "Veuillez remplir les deux champs"
-		  
-						}
-					  }
-					};
-		  
-					var data = {
-					  identifiant: username,
-					  password: password
-					};
-		  
-					xhr.send(JSON.stringify(data));
-				  });
-				</script>
-				<div id="registerButton2">J'ai déjà un compte</div>
+			<form>
+			<p class="formTitle"><strong>S'inscrire</strong></p>
+			<div id="resultRegister" style="color: red; margin: 2%;"></div>
+			<div class="LogcontainerSelector">
+				<div id="SubmitRegister" onclick="submitRegister()"></div>
+					<div class="col-md-12">
+					<input type="text" id="Username_input" name="Username" placeholder="Nom d'utilisateur">
+					</div>
+					<div class="col-md-12">
+					<input type="password" id="Password_input" name="Password" placeholder="Mot de passe">
+					</div>
+					<div class="col-md-12 text-right">
+					<button type="submit" class="site-btn">S'inscrire</button>
+				</div>
+				<div id="loginButton2">J'ai déjà un compte</div>
 				<script>
 		  
 				  document.addEventListener("DOMContentLoaded", function () {
 		  
-					var registerButton = document.getElementById("registerButton2");
+					var registerButton = document.getElementById("loginButton2");
 		  
 					registerButton.addEventListener("click", function () {
-					  window.location.href = "connexion.html";
+					  window.location.href = "inscription.html";
 					});
 				  }); 
 				</script>
+			</div>
+		  	</form>
 		</div>
 	</section>
 	<!-- Page section end -->
+  
 
 
 	<!-- Footer top section -->
