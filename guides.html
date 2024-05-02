@@ -92,6 +92,21 @@
 
 	<!-- Page section -->
 	<section class="page-section recent-game-page spad">
+		<form id="addGuideForm">
+			<div class="form-group">
+			  <label for="title">Titre du guide</label>
+			  <input type="text" class="form-control" id="title" required>
+			</div>
+			<div class="form-group">
+			  <label for="description">Description</label>
+			  <textarea class="form-control" id="description" rows="3" required></textarea>
+			</div>
+			<div class="form-group">
+			  <label for="image">Image</label>
+			  <input type="text" class="form-control" id="image" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Ajouter le guide</button>
+		  </form>		  
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
@@ -233,7 +248,7 @@
 						<form class="search-widget" id="searchForm">
 							<input type="text" placeholder="Search" id="searchInput">
 							<button><i class="fa fa-search"></i></button>
-						</form>						
+						</form>					
 					</div>
 					<!-- widget -->
 					<div class="widget-item">

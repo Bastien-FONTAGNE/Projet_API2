@@ -1624,3 +1624,49 @@ section.page-section.spad.contact-page {
 	padding: 2%;
 	cursor: pointer;
   }
+
+  #addGuideForm {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+  }
+  
+  #addGuideForm .form-group {
+	margin-bottom: 20px;
+  }
+  
+  #addGuideForm .form-control {
+	border-radius: 0;
+	border: 1px solid #ccc;
+	padding: 10px;
+	font-size: 16px;
+  }
+  
+  #addGuideForm .form-control:focus {
+	border-color: #f4af26;
+  }
+  
+  #addGuideForm label {
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 5px;
+  }
+  
+  #addGuideForm .btn-primary {
+	background-color: #f4af26;
+	border-color: #f4af26;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 10px 20px;
+	border-radius: 0;
+	transition: background-color 0.3s ease;
+  }
+  
+  #addGuideForm .btn-primary:hover {
+	background-color: #e39319;
+	border-color: #e39319;
+  }
+  
