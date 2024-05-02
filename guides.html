@@ -92,10 +92,11 @@
 
 	<!-- Page section -->
 	<section class="page-section recent-game-page spad">
-		<form id="addGuideForm">
+		<form id="addGuideForm" enctype="multipart/form-data">
 			<div class="form-group">
 			  <label for="title">Titre du guide</label>
-			  <input type="text" class="form-control" id="title" required>
+			  <input type="text" class="form-control" id="title" required pattern="^Guide .+">
+			  <small class="form-text text-muted">Le titre doit commencer par "Guide"</small>
 			</div>
 			<div class="form-group">
 			  <label for="description">Description</label>
@@ -103,10 +104,11 @@
 			</div>
 			<div class="form-group">
 			  <label for="image">Image</label>
-			  <input type="text" class="form-control" id="image" required>
+			  <input type="file" class="form-control-file" id="image" required accept=".jpg, .jpeg, .png">
+			  <small class="form-text text-muted">L'image doit être au format JPG, JPEG ou PNG</small>
 			</div>
 			<button type="submit" class="btn btn-primary">Ajouter le guide</button>
-		  </form>		  
+		  </form>					  
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
@@ -118,7 +120,7 @@
 								</div>
 								<div class="rgi-content">
 									<h5>Guide Mortal Kombat 1: Liu Kang</h5>
-									<p>Décovrez notre guide pour maitriser Liu Kang sur Mortal Kombat 1</p>
+									<p>Découvrez notre guide pour maitriser Liu Kang sur Mortal Kombat 1</p>
 									<a href="#" class="comment">9 Comments</a>
 									<div class="rgi-extra">
 										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
@@ -252,56 +254,34 @@
 					</div>
 					<!-- widget -->
 					<div class="widget-item">
-						<h4 class="fw-title">Dernier Postes</h4>
-					<div class="latest-blog">
-						<div class="lb-item">
-							<div class="lb-thumb set-bg" data-setbg="img/latest-blog/1.jpg"></div>
-							<div class="lb-content">
-								<div class="lb-date">28 Octobre, 2023</div>
-								<p>PUBG: Est-il encore bon en 2023?</p>
-								<a href="#" class="lb-author">By Bastien</a>
-							</div>
-						</div>
-						<div class="lb-item">
-							<div class="lb-thumb set-bg" data-setbg="img/latest-blog/2.jpg"></div>
-							<div class="lb-content">
-								<div class="lb-date">27 Octobre, 2023</div>
-								<p>Le genre du Battle Royal serait-il entrain de s'éssoufler?</p>
-								<a href="#" class="lb-author">By Bastien</a>
-							</div>
-						</div>
-						<div class="lb-item">
-							<div class="lb-thumb set-bg" data-setbg="img/latest-blog/3.jpg"></div>
-							<div class="lb-content">
-								<div class="lb-date">26 Octobre, 2023</div>
-								<p>Nouvelle extension World Of WarCraft!</p>
-								<a href="#" class="lb-author">By Bastien</a>
-							</div>
-						</div>
-					</div>
-					<!-- widget -->
-					<div class="widget-item">
 						<h4 class="widget-title">Top Commentaires</h4>
 						<div class="top-comment">
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="img/authors/1.jpg"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem consec ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">James Smith</a> <span>sur</span>  Guide Symmetra</p>
+									<div class="tc-date">21 octobre, 2023</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="img/authors/2.jpg"></div>
 								<div class="tc-content">
-									<p><a href="#">Michael James</a> <span>on</span>Cras sit amet sapien aliquam</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">James Smith</a> <span>sur</span>  Review Mass Effect</p>
+									<div class="tc-date">13 Octobre, 2023</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="img/authors/3.jpg"></div>
 								<div class="tc-content">
-									<p><a href="#">Justin More</a> <span>on</span> Lorem ipsum dolor consecsit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
+									<p><a href="#">James Smith</a> <span>sur</span>  Review Grand Theft Auto</p>
+									<div class="tc-date">25 octobre, 2023</div>
+								</div>
+							</div>
+							<div class="tc-item">
+								<div class="tc-thumb set-bg" data-setbg="img/authors/4.jpg"></div>
+								<div class="tc-content">
+									<p><a href="#">James Smith</a> <span>sur</span> Guide Cyberpunk2077</p>
+									<div class="tc-date">19 octobre, 2023</div>
 								</div>
 							</div>
 						</div>
@@ -371,7 +351,7 @@
 						</div>
 					</div>
 				</div>
-				<<div class="col-lg-4 col-md-6">
+				<div class="col-lg-4 col-md-6">
 					<div class="footer-widget">
 						<h4 class="fw-title">Top Commentaires</h4>
 						<div class="top-comment">
@@ -392,14 +372,14 @@
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="img/authors/3.jpg"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>sur</span>  Review Cyberpunk2077 Phantom Liberty</p>
+									<p><a href="#">James Smith</a> <span>sur</span>  Review Grand Theft Auto</p>
 									<div class="tc-date">25 octobre, 2023</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="img/authors/4.jpg"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>sur</span>  Nouvelle extension World of Warcraft</p>
+									<p><a href="#">James Smith</a> <span>sur</span> Guide Cyberpunk2077</p>
 									<div class="tc-date">19 octobre, 2023</div>
 								</div>
 							</div>
