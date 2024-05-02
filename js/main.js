@@ -78,3 +78,17 @@ $(window).on('load', function() {
 
 })(jQuery);
 
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+	event.preventDefault();
+
+	var input = document.getElementById('searchInput').value.toLowerCase();
+	var games = document.getElementsByClassName('recent-game-item');
+
+	for (var i = 0; i < games.length; i++) {
+		if (games[i].textContent.toLowerCase().indexOf(input) > -1) {
+			games[i].style.display = '';
+		} else {
+			games[i].style.display = 'none';
+		}
+	}
+});
