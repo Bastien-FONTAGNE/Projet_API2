@@ -1548,21 +1548,22 @@ section.page-section.spad.contact-page {
   border-width: 2%;
   border-color: #131313;
   border-style: solid;
-  background-color: #f1f1f1;
+  color: black;
+  background-color: #f4af26;
   border-radius: 0%;
   padding: 0.5em 1em;
 }
 
 .registerForm {
-  width: 30%;
-  padding: 4%;
-  border-style: solid;
-  background-color: #ffb320;
-  color: #131313;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+  margin-bottom: 0px;
+	margin-bottom: 100px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 20px;
+	background-color: #f9f9f9;
 }
 
 .registerForm label {
@@ -1590,16 +1591,16 @@ section.page-section.spad.contact-page {
 }
 
 .loginForm {
-	width: 30%;
-	padding: 4%;
-	border-style: solid;
-	background-color: #ffb320;
-	color: #131313;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-  }
+	width: 100%;
+  	max-width: 600px;
+  	margin: 0 auto;
+	margin-bottom: 0px;
+  	margin-bottom: 100px;
+  	border: 1px solid #ccc;
+  	border-radius: 5px;
+  	padding: 20px;
+  	background-color: #f9f9f9;
+}
   
   .loginForm label {
 	align-self: flex-start;
